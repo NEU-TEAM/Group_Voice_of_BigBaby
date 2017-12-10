@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# this node continues get the param_wakeup, when this param is true,
+# BigBaby switch the status from sleep to working
 import rospy
 import actionlib
 import Group_Voice_of_BigBaby.msg
 
 param_wakeup = '/comm/param/ctrl/wakeup'
+# this param the bigbaby which status(sleep or working) she is on
 
 
 class BTAction(object):

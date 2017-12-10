@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# this node is used for listening the outside voice, when BigBaby is on the working status
+# num_samples = 2000  # pyaudio内置缓冲大小
+# sampling_rate = 16000  # 取样频率
+# level = 2000  # 声音保存的阈值
+# count_num = 15　# NUM_SAMPLES个取样之内出现COUNT_NUM个大于LEVEL的取样则记录声音
+# save_length = 4  # 一次写声音的长度：save_length * num_samples 个取样
+# min_length = 7   # 声音记录的最小长度：min_length * num_samples 个取样
 import rospy
 import actionlib
 import Group_Voice_of_BigBaby.msg

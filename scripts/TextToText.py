@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# this node need to work only if the OrderSearch node get FAILURE, it means there is no order in the request,
+# and BigBaby must fetch some response online
 import rospy
 import actionlib
 import Group_Voice_of_BigBaby.msg

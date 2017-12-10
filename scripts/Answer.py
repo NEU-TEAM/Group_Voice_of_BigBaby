@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# this node continues get param_answer, if this param is true, BigBaby needs make some answers
 import rospy
 import actionlib
 import Group_Voice_of_BigBaby.msg

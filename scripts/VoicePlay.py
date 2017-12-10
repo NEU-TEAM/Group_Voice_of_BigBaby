@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# this node is used for playing response
 import rospy
 import actionlib
 import Group_Voice_of_BigBaby.msg
@@ -34,9 +34,11 @@ class BTAction(object):
             stream = dev_to_play.open(format=dev_to_play.get_format_from_width(wave_file.getsampwidth()),
                                       channels=wave_file.getnchannels(), rate=wave_file.getframerate(), output=True)
             while not rospy.get_param(param_interrupt):
+                # if the param_interrupt is true, break the while
                 data = wave_file.readframes(500)
                 if data == '':
                     break
+                # if data comes to end, break the while
                 stream.write(data)
             rospy.set_param(param_play, False)
             rospy.set_param(param_interrupt, False)

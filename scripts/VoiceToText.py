@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# this node is used for transferring the voice to words
 import rospy
 import actionlib
 import Group_Voice_of_BigBaby.msg
@@ -51,12 +51,15 @@ class BTAction(object):
         if data_result['err_no'] == 0:
             request = data_result['result'][0]
             request = request[:-1]
+            # request[:-1] used for delete the comma character
             if request == '':
                 self.set_status('FAILURE')
+            # if request[:-1] is '', then set FAILURE
             rospy.set_param(param_request, request)
             print request
             if rospy.get_param(param_play):
                 rospy.set_param(param_interrupt, True)
+            # if BigBaby is talking, cutoff it
             rospy.set_param(param_answer, True)
             self.set_status('SUCCESS')
         else:

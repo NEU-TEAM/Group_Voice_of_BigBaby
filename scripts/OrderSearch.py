@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# this node gets the param_request, and search orders in it,
+# if order is found, set the param_response and switch to TextToVoice node
 import rospy
 import actionlib
 import Group_Voice_of_BigBaby.msg
